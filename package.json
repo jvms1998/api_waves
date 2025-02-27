@@ -1,0 +1,26 @@
+{
+  "name": "api_waves",
+  "version": "1.0.0",
+  "description": "consulta_climatica",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "api"
+  ],
+  "author": "João Vinicius",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/module-alias": "^2.0.4",
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.3"
+  }
+}
