@@ -54,7 +54,7 @@ export class StormGlass {
     'swellDirection,swellHeight,swellPeriod,waveDirection,waveHeight,windDirection,windSpeed';
   readonly stormGlassAPISource = 'noaa';
 
-  constructor(protected request: AxiosStatic = axios) {}
+  constructor(protected request: AxiosStatic = axios) { }
 
   public async fetchPoints(lat: number, lng: number): Promise<ForecastPoint[]> {
     try {
@@ -66,7 +66,9 @@ export class StormGlass {
           },
         }
       );
+
       return this.normalizeResponse(response.data);
+
     } catch (err) {
       const axiosError = err as AxiosError;
 
@@ -76,8 +78,7 @@ export class StormGlass {
         axiosError.response.status
       ) {
         throw new StormGlassResponseError(
-          `Error: ${JSON.stringify(axiosError.response.data)} Code: ${
-            axiosError.response.status
+          `Error: ${JSON.stringify(axiosError.response.data)} Code: ${axiosError.response.status
           }`
         );
       }
